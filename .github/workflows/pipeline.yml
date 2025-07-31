@@ -1,0 +1,19 @@
+name: Deployement Pipeline
+
+on:
+  push:
+    branch:
+    - main
+jobs:
+  main_deployement_pipeline:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: install npm
+        run: npm install
+      - name: LINT THIS MF
+        run: npm run eslint
+        
