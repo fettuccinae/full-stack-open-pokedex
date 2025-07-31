@@ -1,0 +1,14 @@
+name: HEY WORLD
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  huh_jonb:
+    runs-on: ubuntu-latest
+    steps:
+      - name: DONT SAY HELLO
+        run: |
+          echo "SDFLJKSDFLJ~"
