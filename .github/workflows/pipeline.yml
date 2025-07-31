@@ -1,4 +1,4 @@
-name: Deployement Pipeline
+name: Deployment Pipeline
 
 on:
   push:
@@ -17,7 +17,7 @@ jobs:
       - name: LINT THIS MF
         run: npm run eslint
       - name: BUILD A WALL
-        run: npm start
+        run: npm run build
       - name: TEST PLEASE
-        run: npm test
+        run: npm run test
         
