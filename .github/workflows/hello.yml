@@ -6,9 +6,15 @@ on:
       - main
 
 jobs:
-  huh_jonb:
+  hello_world_job:
     runs-on: ubuntu-latest
     steps:
       - name: DONT SAY HELLO
         run: |
           echo "SDFLJKSDFLJ~"
+      - name: NOW IS IT
+        run: |
+          date
+      - name: LYING ABOUT NIGHTS
+        run: |
+          ls -l
