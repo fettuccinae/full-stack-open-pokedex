@@ -26,4 +26,18 @@ jobs:
       - name: TRIGGER Deployment
         if: ${{ github.event_name == 'push' }} 
         run: curl https://api.render.com/deploy/srv-${{ secrets.RENDER_SERVICE_ID }}?key=${{ secrets.RENDER_SERVICE_KEY }}
-        
+
+  tag_release:
+    needs: [simple_deployment_pipeline]
+    if: >-
+      ${{ github.event_name == 'push' &&
+        !contains(join(github.event.commits.*.message, ' '), '#skip') }}
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v3
+      - name: Bump version number and push tag
+        uses: anothrNick/github-tag-action@a2c70ae13a881faf2b4953baaa9e49731997ab36
+        env:
+          DEFAULT_BUMP: patch
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          WITH_V: true        
