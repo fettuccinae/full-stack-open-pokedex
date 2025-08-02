@@ -20,4 +20,6 @@ jobs:
         run: npm run build
       - name: TEST PLEASE
         run: npm run test
+      - name: TRIGGER Deployment
+        run: curl https://api.render.com/deploy/srv-${{ secrets.RENDER_SERVICE_ID}}?key=${{ RENDER_SERVICE_KEY }}
         
