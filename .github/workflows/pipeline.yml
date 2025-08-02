@@ -4,6 +4,9 @@ on:
   push:
     branch:
     - main
+    pull_request:
+      branches: [main]
+      types: [opened, synchronize]
 jobs:
   main_deployement_pipeline:
     runs-on: ubuntu-latest
