@@ -10,7 +10,7 @@ app.get('/health', (req, res) => {
   res.send('ok')
 })
 
-app.get('/why', (req, res) => {
+app.get('/whyyyy', (req, res) => {
   res.send('idontknoweither.')
 })
 
